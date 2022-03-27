@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanbanfire-e9311": {
+      "hosting": {
+        "afb4": [
+          "kanbanfire-e9311"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanbanfire-e9311"
+  }
+}
