@@ -9,15 +9,13 @@ import { VoteService } from './vote.service';
 })
 export class AppComponent {
   title = 'afb4';
+  votes: Vote[] = [];
 
   constructor(private voteService: VoteService) {
-    this.voteService.getVotes().subscribe(votes => {
-      console.log(`votes: ${JSON.stringify(votes)}`);
+    this.voteService.getVotes().subscribe(vs => {
+      this.votes = vs;
+      console.log(`votes: ${JSON.stringify(this.votes)}`);
     });
-    /*
-    const v2 = new Vote("1", "1", 1);
-    this.voteService.addVote(v2);
-    */
   }
 
   onClick() {
