@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, addDoc } from '@angular/fire/firestore';
 
 import { Vote } from "./vote";
 
@@ -22,13 +22,8 @@ export class VoteService {
     }
 
     addVote(vote: Vote) {
-        console.log(`not done yet`);
-        /* 
-        this.firestore.collection("votes").add(vote)
-        .then( (doc: { id: string; }) => {
-            console.log("Vote successfully written!");
-            vote.id = doc.id;
-        });
-        */
+       // https://edupala.com/angular-firebase-crud-operation-using-angularfire/
+       const votesRef = collection(this.firestore, "votes");
+       return addDoc(votesRef, vote);
     }
 }

@@ -14,6 +14,10 @@ export class AppComponent {
     this.voteService.getVotes().subscribe(votes => {
       console.log(`votes: ${JSON.stringify(votes)}`);
     });
+    /*
+    const v2 = new Vote("1", "1", 1);
+    this.voteService.addVote(v2);
+    */
   }
 
   onClick() {
